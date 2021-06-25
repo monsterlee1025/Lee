@@ -1,0 +1,54 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/test003/test003",
+          "pathName": "pages/test003/test003",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/console/console",
+          "pathName": "pages/console/console",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/test001/test001",
+          "pathName": "pages/test001/test001",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classifyList/classifyList",
+          "pathName": "pages/classifyList/classifyList",
+          "query": "id=item._id",
+          "scene": null
+        },
+        {
+          "name": "pages/classifyDetail/classifyDetail",
+          "pathName": "pages/classifyDetail/classifyDetail",
+          "query": "id=undefined",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

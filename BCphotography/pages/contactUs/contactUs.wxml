@@ -1,0 +1,4 @@
+<!--pages/contactUs/contactUs.wxml-->
+<view class="pageContainer">
+  <image class="wechatQrCode" mode="aspectFit" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/IMG_3282.JPG?sign=063ff1499e1b43fd01172d512cbdea56&t=1624090621"></image>
+</view>

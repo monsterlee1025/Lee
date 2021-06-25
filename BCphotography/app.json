@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/contactUs/contactUs",
+    "pages/classifyList/classifyList",
+    "pages/classifyDetail/classifyDetail",
+    "pages/console/console"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "半厨摄影工作室",
+    "navigationBarTextStyle": "black"
+  },
+
+
+  "sitemapLocation": "sitemap.json"
+}

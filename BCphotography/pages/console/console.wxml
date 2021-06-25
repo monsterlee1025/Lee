@@ -1,0 +1,156 @@
+<!-- Tab切换菜单 -->
+<view class="tabs_title">
+  <view class="tabs_title_item {{index==currentIndex?'active':''}}" wx:for="{{tabMenuList}}" bindtap="clickTabTitle"
+    data-index="{{index}}">
+    {{item}}
+  </view>
+</view>
+
+<!-- 系列操作区 -->
+<view wx:if="{{currentIndex==0}}" class="tab_container series_container">
+  <!-- 系列列表 -->
+  <view class="series_list_container">
+    <view class="series_list" wx:for="{{seriesListData}}">
+      {{item.seriesName}}
+      <image bindtap="del_series_data" data-id="{{item._id}}" data-file-id="{{item.fileId}}" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/icon_del_data.png?sign=224682fad21bcbb95c24c21099b45d07&t=1624091067"></image> <!--删除系列-->
+    </view>
+  </view>
+  <!-- 添加系列 -->
+  <view class="series_add">
+    <input value="{{seriesTitle}}" placeholder="输入系列名称" bindinput="setSeriesName" />  <!-- 系列名称输入框 -->
+    <view class="uploadImgContainer">
+      <view class="img_list_container add_img_container" wx:if="{{seriesArr}}">
+        <image class="img_list" src="{{seriesArr.url}}" mode="aspectFill"></image>  <!-- 显示已选图片 -->
+      </view>
+      <!-- 选择图片按钮 -->
+      <view class="upload_img" bindtap="selecSeriesImg" wx:if="{{!seriesArr}}">
+        <image class="btnIconImg" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/icon_add_img%403x.png?sign=729ff0fefd6e3d284861f0cea02d7ce0&t=1624090876"></image>
+        建议尺寸504*756px
+      </view>
+    </view>
+    <button bindtap="saveSeries">确认添加系列</button>  <!-- 确认添加按钮 -->
+  </view>
+</view>
+
+<!-- 分组操作区 -->
+<view wx:if="{{currentIndex==1}}" class="tab_container group_container">
+  <!-- 选择所属系列 -->
+  <picker 
+    bindchange="bindPickerChange" 
+    bindcancel="bindChangeCancle" 
+    value="{{choseSeriesIndex}}" 
+    range="{{seriesListData}}" 
+    range-key="seriesName"
+    >
+    <view class="select_series_box select_series" bindtap="choseItem">
+     系列： {{seriesListData[choseSeriesIndex].seriesName}}
+      <image src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/selset_sanjiao.png?sign=2e049efef3c894862fd24b822acc27a5&t=1624090775"></image>
+    </view>
+  </picker>
+  <!-- 分组列表 -->
+  <view class="series_list_container">
+    <view class="series_list" wx:for="{{groupListData}}">
+      {{item.groupName}}
+      <image bindtap="del_group_data" data-id="{{item._id}}" data-file-id="{{item.fileId}}" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/icon_del_data.png?sign=68836744ed7862a023d9f8cdafa70588&t=1624091351"></image>
+    </view>
+  </view>
+  <!-- 添加分组 -->
+  <view class="series_add">
+    <input value="{{groupName}}" placeholder="输入分组名称" bindinput="setGroupName" />  <!-- 分组名称输入框 -->
+    <!-- 选择封面图 -->
+    <view class="uploadImgContainer"> 
+      <view class="img_list_container add_img_container" wx:if="{{groupArr}}" wx:key="index">
+        <image class="img_list" src="{{groupArr.url}}" mode="aspectFill"></image>  <!-- 显示已选图片 -->
+      </view>
+      <!-- 选择图片按钮 -->
+      <view class="upload_img" bindtap="selectGroupImg" wx:if="{{!groupArr}}">
+        <image class="btnIconImg" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/icon_add_img%403x.png?sign=729ff0fefd6e3d284861f0cea02d7ce0&t=1624090876"></image>
+        建议尺寸504*756px
+      </view>
+    </view>
+    <button bindtap="saveGroup">确认添加分组</button>  <!-- 确认添加按钮 -->
+  </view>
+</view>
+
+<!-- 上传图片操作区 -->
+<view wx:if="{{currentIndex==2}}" class="tab_container group_container">
+  <!-- 选择所属系列 -->
+  <picker 
+    bindchange="changeSeries" 
+    bindcancel="bindChangeCancle" 
+    value="{{seriesIndex}}" 
+    range="{{seriesListData}}" 
+    range-key="seriesName"
+    >
+    <view class="select_series_box select_series" bindtap="choseSeriesItem">
+      系列：{{seriesListData[seriesIndex].seriesName}}
+      <image src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/selset_sanjiao.png?sign=2e049efef3c894862fd24b822acc27a5&t=1624090775"></image>
+    </view>
+  </picker>
+  <!-- 选择所属分组 -->
+  <picker 
+    bindchange="changeGroup" 
+    bindcancel="bindChangeCancle" 
+    value="{{photoGroupIndex}}" 
+    range="{{photoGroupListData}}" 
+    range-key="groupName">
+    <view class="select_series_box select_series" bindtap="choseGroupItem">
+      分组：{{photoGroupListData[photoGroupIndex].groupName}}
+      <image src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/selset_sanjiao.png?sign=2e049efef3c894862fd24b822acc27a5&t=1624090775"></image>
+    </view>
+  </picker>
+
+  <!-- 图片列表 -->
+  <view class="tab_container img_container">
+    <view class="img_list_container" wx:for="{{photographyListData}}">
+      <image class="img_list" src="{{item.photographyImgSrc}}" mode="aspectFill"></image>
+      <!-- 删除按钮 -->
+      <image bindtap="del_photography_data" data-id="{{item._id}}" data-file-id="{{item.fileId}}" class="delet_btn" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/icon_del_img%403x.png?sign=c9a647b135b1d0fc7c8075995fee1539&t=1624091514"></image>  
+    </view>
+  </view>
+
+  <!-- 上传作品图片 -->
+  <view class="series_add">
+    <view class="uploadImgContainer">
+      <view class="img_list_container add_img_container" wx:for="{{photographyArr}}" wx:key="index">
+        <image class="img_list" src="{{item.url}}" mode="aspectFill"></image>  <!-- 显示已选图片-->  
+        
+      </view>
+      <!-- 选择图片按钮框 -->
+      <view class="upload_img" bindtap="selectPhotographyImg">
+        <image class="btnIconImg" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/icon_add_img%403x.png?sign=729ff0fefd6e3d284861f0cea02d7ce0&t=1624090876"></image>
+        建议尺寸1242*1866px
+      </view>
+  </view>
+
+    <button bindtap="savePhotography">确认上传</button>
+  </view>
+</view>
+
+<!-- 上传轮播图操作区 -->
+<view wx:if="{{currentIndex==3}}" class="tab_container group_container">
+  <!-- 轮播图列表 -->
+  <view class="tab_container img_container">
+    <view class="img_list_container" wx:for="{{bannerListData}}">
+      <image class="img_list" src="{{item.bannerSrc}}" mode="aspectFill"></image>
+      <image bindtap="del_banner_data" data-id="{{item._id}}" data-file-id="{{item.fileId}}" class="delet_btn" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/icon_del_img%403x.png?sign=c9a647b135b1d0fc7c8075995fee1539&t=1624091514"></image>
+    </view>
+  </view>
+
+  <!-- 上传轮播图片 -->
+  <view class="series_add">
+    <view class="uploadImgContainer">
+      <view class="img_list_container banner_list_con" wx:for="{{bannerArr}}" wx:key="index">
+        <image class="img_list" src="{{item.url}}" mode="aspectFill"></image>  <!-- 显示已选图片-->  
+      </view>
+
+      <!-- 选择上传轮播图按钮 -->
+      <view class="upload_img add_banner_img" bindtap="selectBannerImg">
+        <image class="btnIconImg" src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/icon_add_img%403x.png?sign=729ff0fefd6e3d284861f0cea02d7ce0&t=1624090876"></image>
+        建议尺寸1242*1866px
+      </view>
+  </view>
+
+    <button bindtap="saveBannerImg">确认上传</button>
+  </view>
+</view>

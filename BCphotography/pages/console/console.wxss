@@ -1,0 +1,200 @@
+page{
+  background-color: #F8F8F8;
+  height: auto;
+}
+
+/* Tab切换菜单 */
+.tabs_title{
+  display: flex;
+  background-color: white;
+}
+.tabs_title .tabs_title_item{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  line-height: 48px;
+  font-size: 14px;
+}
+.active{
+  color: #5E95A9;
+  border-bottom: 2px solid currentColor;
+}
+
+/* 公用显示区域 */
+.tab_container{
+  margin: 0 15px;
+  width: auto;
+  height: auto;
+}
+
+/* 系列操作区 */
+.series_list_container,.series_add,.photography_add{
+  margin-top: 10px;
+  padding: 0 18px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 #304b5527;
+  height:auto;
+}
+
+.series_list_container .series_list{
+  font-size: 14px;
+  color: #4E4E4E;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #F8F8F8;
+}
+.series_list image{
+  width: 24px;
+  height: 24px;
+}
+
+/* 添加系列 */
+.series_add{
+  padding: 20rpx 0;
+}
+.series_add input{
+  height: 84rpx;
+  width: 600rpx;
+  margin: 20rpx auto;
+  border: 1px solid #5E95A9;
+  border-radius: 4px;
+  padding-left: 12px;
+  font-size: 13px;
+  color: #5E95A9;
+}
+/* 上传图片 */
+.series_add .uploadImgContainer{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+.uploadImgContainer .showChoseImg,.upload_img{
+  width:102px;
+  height:133px;
+  border-radius: 4px;
+}
+.series_add .upload_img{
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed #e0e0e0;
+  border-radius: 4px;
+  text-align: center;
+  align-items: center;
+  font-size: 12px;
+  color: #d1d1d1;
+  /* margin-top: 16rpx; */
+}
+.series_add .btnIconImg,.btnIconImg03{
+  width: 24px;
+  height:24px;
+  margin-bottom: 10px;
+}
+
+.series_add button{
+  background-color: #5E95A9;
+  border:none;
+  color: white;
+  font-size: 15px;
+  line-height: 42px;
+  border-radius: 24px;
+  width: 600rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 分组操作区 */
+.group_container{
+  margin-top: 10px;
+}
+/* 选择框 */
+.tab_container .select_series,.select_series_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 13px;
+  line-height: 42px;
+  color: #5E95A9;
+  border: 1px solid #5E95A9;
+  border-radius: 4px;
+  background-color: white;
+  margin-top: 10px;
+}
+.group_container .select_series image{
+  width: 9px;
+  height: 5px;
+  margin-right: 8px;
+}
+
+/* 上传图片操作区 */
+.img_container{
+  /* border:1px solid green; */
+  margin: 10px auto;
+  padding: 10rpx 0 20rpx 0;
+  margin-bottom:10px ;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 #304b5527;
+}
+.img_list_container{
+  margin: 10rpx auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}.banner_list_con{
+  margin:0;
+}
+.img_list_container .img_list,.upload_img{
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  /* border: 1px solid #f0f0f0; */
+  width: 104px;
+  height:156px;
+  text-align: center;
+  font-size: 12px;
+  color: #adadad;
+  border-radius: 4px;
+}
+.img_container .uploadImg{
+  background-color: #5E95A9;
+  border:none;
+  color: white;
+  font-size: 15px;
+  line-height: 42px;
+  border-radius: 24px;
+  margin: 20px 20px;
+}
+.img_container{
+  /* padding: 20rpx 24rpx; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  justify-content: flex-start;
+}
+.img_list_container{
+  position: relative;
+}
+.add_img_container{
+  margin:0 0 16rpx 0;
+}
+
+.img_list_container .delet_btn{
+  position:absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: -2rpx;
+  right: -2rpx;
+}
+/* 上传图片 */
+.photography_add{
+  padding: 20px auto;
+}

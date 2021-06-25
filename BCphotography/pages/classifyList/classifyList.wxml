@@ -1,0 +1,10 @@
+<!--分类列表-->
+<view class="listContainer">
+  <view 
+    class="imgListContainer" 
+    wx:for="{{groupListData}}"
+    >
+    <image bindtap="goDetail" data-item="{{item}}"  mode="aspectFill" lazy-load="True" src="{{item.groupImgSrc}}"></image>
+    <text>{{item.groupName}}</text>
+   </view>
+</view>

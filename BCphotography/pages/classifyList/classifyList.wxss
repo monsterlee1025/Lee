@@ -1,0 +1,26 @@
+/* 列表样式 */
+
+.listContainer{
+  padding: 20rpx 24rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.imgListContainer{
+  margin-bottom:12rpx;
+  width: auto;
+  height: 560rpx;
+  font-size: 24rpx;
+  color: #7a7a7a;
+  text-align: left;
+}
+
+.imgListContainer image{
+  /* outline: 2rpx solid #f9fbfc; */
+  width: 336rpx;
+  height: 504rpx;
+  border-radius: 8rpx;
+  display: block;
+  margin-bottom: 12rpx;
+}

@@ -1,0 +1,70 @@
+/*轮播图样式*/
+swiper,.indexBannerImg{
+width:100%;
+height: 1072rpx;
+}
+
+/*工作室信息显示*/
+.nameContainer{
+  width: 100%;
+  height: 168rpx;
+  background-color: #28456B;
+  color: white;
+  margin-top: 20rpx;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 44rpx;
+  padding-right: 40rpx;
+}
+.nameContainer .studioInfo{
+  width: auto;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+.nameContainer .studioHeader{
+  width: 104rpx;
+  height: 104rpx;
+  border: 8rpx solid #ffffff17;
+  border-radius: 100rpx;
+  margin-right: 24rpx;
+}
+/* 联系我们 */
+.nameContainer .contactUs{
+  width: 200rpx;
+  background-color: #4673AF;
+  font-size: 26rpx;
+  line-height: 56rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  margin-right: 40prx;
+  box-shadow:0 4rpx 8rpx 4rpx #10284611;
+}
+
+/*列表样式*/
+.listContainer{
+  padding: 20rpx 24rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.imgListContainer{
+  margin: 12rpx 0rpx;
+  width: auto;
+  height:560rpx;
+  font-size: 24rpx;
+  color: #7a7a7a;
+  text-align: left;
+}
+
+.imgListContainer image{
+  outline: 2rpx solid #f9fbfc;
+  width: 336rpx;
+  height: 504rpx;
+  border-radius: 8rpx;
+  display: block;
+  margin-bottom: 12rpx;
+}

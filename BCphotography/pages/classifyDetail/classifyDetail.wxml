@@ -1,0 +1,4 @@
+<!--详情列表-->
+<view bindtap="previewImg" data-index="{{index}}" class="imgListContainer" wx:for="{{photographyUrlList}}">
+  <image mode="aspectFill" lazy-load="True" src="{{item}}"></image>
+</view>

@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<!--轮播图-->
+<swiper autoplay="Ture" interval="4000" circular="Ture" indicator-dots="Ture" indicator-color="white" indicator-active-color="#87CDCD">
+  <swiper-item wx:for="{{bannerListData}}" >
+    <image class="indexBannerImg" mode="aspectFill" src="{{item.bannerSrc}}"></image>
+  </swiper-item>
+</swiper>
+
+<!--标题区-->
+<view class="nameContainer">
+  <view class="studioInfo">
+    <image 
+    class="studioHeader" 
+    bindtap="getUserInfo"
+    src="https://7068-photography-6gax5e10321218b2-1306289423.tcb.qcloud.la/icon/IMG_3284.JPG?sign=98aff699b4619d75d5ed87551ef9f2a3&t=1624090663"
+    >
+    </image>
+    <view class="studioName" bindtap="goConsole">半厨摄影工作室</view>
+  </view>
+  <navigator class="contactUs" url="/pages/contactUs/contactUs">联系我们</navigator>
+</view>
+
+<!--作品列表-->
+<view class="listContainer">
+  <view class="imgListContainer" wx:for="{{seriesListData}}" wx:key="*this">
+    <image bindtap="goClassifyList" data-item="{{item}}" mode="aspectFill" lazy-load="True" src="{{item.seriesImgSrc}}"></image>
+    <text>{{item.seriesName}}</text>
+   </view>
+</view>

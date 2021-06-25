@@ -1,0 +1,22 @@
+/* 列表样式 */
+page{
+  padding: 20rpx 24rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.imgListContainer{
+  margin-bottom:12rpx;
+  width: auto;
+  height: auto;
+}
+
+.imgListContainer image{
+  /* outline: 2rpx solid #f9fbfc; */
+  width: 336rpx;
+  height: 504rpx;
+  border-radius: 8rpx;
+  display: block;
+  margin-bottom: 12rpx;
+}
